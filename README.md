@@ -6,12 +6,11 @@ Primeiro você deve implementar o seguinte sdk no build.grade nas suas dependên
  ```
 implementation (“com.mapbox.mapboxsdk:mapbox-android-sdk:10.2.0'”)
 implementation (“com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.5.0”)
-----
  ```
 Depois incluir a seguinte permissão no manifest.xml:
  
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
- ----
+```
 Abra depois o settings.gradle.kts e adicione o código:
  
 maven {
