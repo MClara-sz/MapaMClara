@@ -1,6 +1,6 @@
 # MapaMClaraDocumentação
 
-##MapBox:
+## MapBox:
  
 Primeiro você deve implementar o seguinte sdk no build.grade nas suas dependências :
  ```
