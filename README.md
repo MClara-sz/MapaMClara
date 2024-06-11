@@ -8,11 +8,11 @@ implementation (“com.mapbox.mapboxsdk:mapbox-android-sdk:10.2.0'”)
 implementation (“com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.5.0”)
  ```
 Depois incluir a seguinte permissão no manifest.xml:
- 
+ ```
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
 Abra depois o settings.gradle.kts e adicione o código:
- 
+ ```
 maven {
 url = uri("https://api.mapbox.com/downloads/v2/releases/maven")
 // Do not change the username below. It should always be "mapbox" (not your username).
@@ -22,20 +22,20 @@ credentials.password = providers.gradleProperty("MAPBOX_DOWNLOADS_TOKEN").get()
 authentication.create<BasicAuthentication>("basic")
 }
 chevron-down hide lines
-- 
+```
  
 Faça a verificação de que o minSdk esteja maior que 21
  
  
 Após adicionar o seguinte código no app/build.gradle.kts:
  
- 
+ ```
 implementation("com.mapbox.maps:android:11.4.1")
--
+```
 Agora sincronize os arquivos do gradle no Android Studio
  
 Agora para adicionaremos o mapa no MainActivity com  o seguinte codigo :
- 
+ ```
 MapboxMap( 
 Modifier.fillMaxSize(), 
 mapViewportState = MapViewportState().apply {
@@ -47,10 +47,10 @@ bearing(0.0)
 }
 },
 )
--
+```
 
 Agora o xml do layout deve ser:
-
+```
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -65,11 +65,11 @@ Agora o xml do layout deve ser:
         app:mapbox_cameraPitch="0.0"
         app:mapbox_cameraBearing="0.0" />
 </FrameLayout>
--
+```
 
 
 Abra de novo o MainActivity e coloque o seguinte código:
-
+```
 // Create a map programmatically and set the initial camera
 mapView = MapView(this)
 mapView.mapboxMap.setCamera(
@@ -81,7 +81,7 @@ CameraOptions.Builder()
 .build() 
 )
 // Add the map view to the activity (you can also add it to other views as a child)
--
+```
 
 
 
